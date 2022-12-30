@@ -1,0 +1,70 @@
+Network Info
+============
+> HardhatEVM: v2.12.2
+> network:    hardhat
+
+100% Statements 59/59 
+100% Branches 36/36 
+100% Functions 15/15 
+100% Lines 64/64 
+
+
+  Voting_4
+    v  Contract deployed (401ms)
+    v  Contract owner is correctv 
+    v  modifier onlyOwner: Negative test (52ms)
+    v  modifier onlyOwner: Positive test
+    v  modifier onlyVotingExists: Negative test
+    v  modifier onlyVotingExists: Positive test (73ms)
+    v  function VoitingCountGet
+    v  function VoitingAdd: Period is to short
+    v  function VoitingAdd: Only Owner
+    v  function VoitingAdd: Normal work (39ms)
+    v  function VoitingAdd: EventVotingDraft
+    v  function VoitingStart: onlyOwner
+    v  function VoitingStart: onlyVotingExists
+    v  function VoitingStart: normal work
+    v  function VoitingStart: EventVoting (54ms)
+    v  function VoitingStart: onlyDraft
+    v  function VoitingLengthVoting: onlyVotingExists
+    v  function VoitingLengthVoting: onlyDraft
+    v  function VoitingLengthVoting: onlyOwner
+    v  function VoitingLengthVoting: Normal work (53ms)
+    v  function CandidateAdd: onlyDraft
+    v  function CandidateAdd: onlyOwner
+    v  function CandidateAdd: Candidate Already Exists (59ms)
+    v  function CandidateAdd: Normal work
+    v  function CandidateAdd: To many candidates
+    v  function GetVoteInfo (53ms)
+    v  function CandidateDelete: onlyDraft (63ms)
+    v  function CandidateDelete: This Candidate NOT Exists (55ms)
+    v  function CandidateDelete: Only Owner!
+    v  function CandidateDelete: normal work (42ms)
+    v  function Vote: Voiting don't exists
+    v  function Vote: This voting not started yet! (45ms)
+    v  function Vote: Candidate does not exists! (64ms)
+    v  function Vote: This voting is Finished! (54ms)
+    v  function Vote: Normal work #1 (71ms)
+    v  function Vote: Normal work #2
+    v  function Vote: Normal work #3
+    v  function GetMyPrice: This voting is NOT finished! (73ms)
+    v  function GetMyPrice: You are not the Winner! (93ms)
+    v  function GetMyPrice: This voting not started yet!
+    v  function GetMyPrice: Normal Call (115ms)
+    v  function GetMyPrice: Price already taken! (55ms)
+    v  function GetMyPrice: Normal GetMoney (46ms)
+    v  function GetMyCommission: Only Owner!
+    v  function GetMyCommission: Voiting NOT exists!
+    v  function GetMyCommission: This voting not started yet! (49ms)
+    v  function GetMyCommission: This voting is NOT finished! (58ms)
+    v  function GetMyCommission: Normal GetMoney (64ms)
+    v  function GetMyCommission: Commission already taken!
+    v  logic: if win acc2 (121ms)
+
+  50 passing (3s)
+
+|----------|----------|----------|----------|----------------|
+|  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+|----------|----------|----------|----------|----------------|
+|      100 |      100 |      100 |      100 |                |
+|----------|----------|----------|----------|----------------|

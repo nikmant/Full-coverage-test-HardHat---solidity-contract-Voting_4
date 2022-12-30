@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\Voting_4.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Voting_4.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>59/59</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>36/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>64/64</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-yes">56×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-yes">58×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity 0.8.17;
+&nbsp;
+contract Voting_4
+{
+    // Определяю переменные Владелей, Кол-во голосований, Максимальное кол-во кандидатов, Комиссия
+    address public Owner;
+    uint public CandidateMaxCount;
+    uint public CommissionPercent;
+&nbsp;
+    // Определяю структуру "Кандидат"
+    struct StructCandidate
+    {
+        bool IsExists;
+        uint WeiVote;
+    }
+&nbsp;
+    // Определяю структуру "КандидатЫ"
+    struct StructMapCandidates
+    {
+        uint CandidateCount;
+        mapping(address=&gt;StructCandidate) MC;
+    }
+&nbsp;
+    // Определяю структуру "Голосование"
+    struct StructVoting
+    {
+        StructMapCandidates Candidates;
+        uint StartVoting;
+        uint EndVoting;
+        uint LengthVoting;
+        bool IsExists; 
+        bool IsStarted; 
+        uint Bank;
+        uint WinnerBalance;
+        address WinnerAddress;
+        bool IsTakePrice;
+        bool IsTakeCommition;
+    }
+&nbsp;
+    // Определяю переменную "Голосования"
+    struct StructMapVotings
+    {
+        uint VoitingCount;
+        mapping(uint=&gt;StructVoting) MV;
+    }
+&nbsp;
+    StructMapVotings public Votings;
+&nbsp;
+&nbsp;
+    // Конструктор
+    constructor()
+    {
+        Owner = msg.sender;
+        Votings.VoitingCount = 0;
+        CandidateMaxCount = 1000;
+        CommissionPercent = 30;
+    }
+  
+    
+    // Модификатор "Только владелец контракта"
+    modifier onlyOwner()
+    {
+        require(msg.sender==Owner, "Only Owner!");
+        _;
+    }
+&nbsp;
+    modifier onlyVotingExists(uint _VoitingIndex)
+    {
+        require(Votings.MV[_VoitingIndex].IsExists==true, "Voiting NOT exists!");
+        _;
+    }
+&nbsp;
+    modifier onlyDraft(uint _VoitingIndex)
+    {
+        require(Votings.MV[_VoitingIndex].IsStarted==false, "Already started!");
+        _;
+    }
+&nbsp;
+   
+    // Отредактировать глобальную переменную "максимально возможное количество кандидатов одного голосования"
+    function CandidateMaxCountEdit(uint _CandidateMaxCount)
+    public 
+    onlyOwner
+    {
+        CandidateMaxCount = _CandidateMaxCount;
+    }
+&nbsp;
+   
+    // Добавить новое голосование
+    function VoitingAdd(address[] memory _CandidateAddressArray, uint _Period)
+    public 
+    onlyOwner
+    {
+        require(_Period&gt;=1, "Period is to short!");
+        Votings.MV[Votings.VoitingCount].LengthVoting = _Period;
+        Votings.MV[Votings.VoitingCount].IsExists = true;
+        uint n;
+        for (n=0; n&lt;_CandidateAddressArray.length; n++)
+            Votings.MV[Votings.VoitingCount].Candidates.MC[_CandidateAddressArray[n]].IsExists = true;
+        Votings.MV[Votings.VoitingCount].Candidates.CandidateCount = _CandidateAddressArray.length;
+        emit EventVotingDraft( Votings.VoitingCount );
+        Votings.VoitingCount++;
+    }
+&nbsp;
+    // Возвращает количество голосований
+    function VoitingCountGet()
+    public
+    view
+    returns (uint _VoitingCount)
+    {
+        _VoitingCount = Votings.VoitingCount;
+    }
+&nbsp;
+    // Стартануть голосование
+    function VoitingStart(uint _VoitingIndex)
+    public 
+    onlyOwner
+    onlyVotingExists(_VoitingIndex)
+    onlyDraft(_VoitingIndex)
+    {
+        Votings.MV[_VoitingIndex].IsStarted=true;
+        Votings.MV[_VoitingIndex].StartVoting=block.timestamp;
+        Votings.MV[_VoitingIndex].EndVoting=block.timestamp+Votings.MV[_VoitingIndex].LengthVoting;        
+&nbsp;
+        emit EventVoting  ( _VoitingIndex
+                          , Votings.MV[_VoitingIndex].StartVoting
+                          , Votings.MV[_VoitingIndex].EndVoting
+                          , Votings.MV[_VoitingIndex].LengthVoting
+                          );
+    }
+&nbsp;
+    // Отредактировать период голосования
+    function VoitingLengthVoting(uint _VoitingIndex, uint _LengthVoting)
+    public 
+    onlyOwner
+    onlyVotingExists(_VoitingIndex)
+    onlyDraft(_VoitingIndex)
+    {
+        Votings.MV[_VoitingIndex].LengthVoting = _LengthVoting;        
+    }
+&nbsp;
+&nbsp;
+    // Добавить кандидата
+    function CandidateAdd(uint _VoitingIndex, address _CandidateAdr)
+    public 
+    onlyOwner 
+    onlyVotingExists(_VoitingIndex)
+    onlyDraft(_VoitingIndex)
+    {
+        require(Votings.MV[_VoitingIndex].Candidates.CandidateCount &lt; CandidateMaxCount, "To many candidates");
+        require(Votings.MV[_VoitingIndex].Candidates.MC[_CandidateAdr].IsExists == false, "This Candidate Already Exists");
+        Votings.MV[_VoitingIndex].Candidates.MC[_CandidateAdr].IsExists = true;
+        Votings.MV[_VoitingIndex].Candidates.CandidateCount++;
+        emit EventCandidate( _VoitingIndex , _CandidateAdr  );
+    }
+&nbsp;
+&nbsp;
+    // Удалить кандидата
+    function CandidateDelete(uint _VoitingIndex, address _CandidateAdr)
+    public 
+    onlyOwner 
+    onlyVotingExists(_VoitingIndex)
+    onlyDraft(_VoitingIndex)
+    {
+        require(Votings.MV[_VoitingIndex].Candidates.MC[_CandidateAdr].IsExists == true, "This Candidate NOT Exists");
+        Votings.MV[_VoitingIndex].Candidates.MC[_CandidateAdr].IsExists = false;
+        Votings.MV[_VoitingIndex].Candidates.CandidateCount = Votings.MV[_VoitingIndex].Candidates.CandidateCount - 1;
+    }
+&nbsp;
+&nbsp;
+    // Функция "Проголосовать на таком-то голосовании за такого-то кандидата"
+    // Проверяем, что
+    //   голосование было начато
+    //   голосование не завершено
+    //   кандидат имеется
+    function Vote(uint _VoitingIndex, address _CandidateAdr)
+    public
+    payable
+    onlyVotingExists(_VoitingIndex)
+    {
+        require(Votings.MV[_VoitingIndex].IsStarted, "This voting not started yet!");
+        require(block.timestamp &lt; Votings.MV[_VoitingIndex].EndVoting, "This voting is Finished!");
+        require(Votings.MV[_VoitingIndex].Candidates.MC[_CandidateAdr].IsExists, "Candidate does not exists!");
+        Votings.MV[_VoitingIndex].Candidates.MC[_CandidateAdr].WeiVote += msg.value;
+        Votings.MV[_VoitingIndex].Bank = Votings.MV[_VoitingIndex].Bank + msg.value;
+        if (Votings.MV[_VoitingIndex].Candidates.MC[_CandidateAdr].WeiVote &gt; Votings.MV[_VoitingIndex].WinnerBalance)
+        {
+            Votings.MV[_VoitingIndex].WinnerAddress = _CandidateAdr;
+            Votings.MV[_VoitingIndex].WinnerBalance = Votings.MV[_VoitingIndex].Candidates.MC[_CandidateAdr].WeiVote;
+        }
+    }
+&nbsp;
+&nbsp;
+    // Взять мой приз победителя
+    function GetMyPrice(uint _VoitingIndex)
+    public
+    onlyVotingExists(_VoitingIndex)
+    {
+        require(Votings.MV[_VoitingIndex].IsStarted, "This voting not started yet!");
+        require(block.timestamp &gt; Votings.MV[_VoitingIndex].EndVoting, "This voting is NOT finished!");
+        require(msg.sender==Votings.MV[_VoitingIndex].WinnerAddress, "You are not the Winner!");
+        require(Votings.MV[_VoitingIndex].IsTakePrice==false, "Price already taken!");        
+        uint myPrice = Votings.MV[_VoitingIndex].Bank 
+                    - (Votings.MV[_VoitingIndex].Bank * CommissionPercent / 100);
+        Votings.MV[_VoitingIndex].IsTakePrice = true;
+        payable(msg.sender).transfer(myPrice);
+    }
+&nbsp;
+&nbsp;
+    // Взять мою комиссию
+    function GetMyCommission(uint _VoitingIndex)
+    public
+    onlyOwner
+    onlyVotingExists(_VoitingIndex)
+    {
+        require(Votings.MV[_VoitingIndex].IsStarted, "This voting not started yet!");
+        require(block.timestamp &gt; Votings.MV[_VoitingIndex].EndVoting, "This voting is NOT finished!");
+        require(Votings.MV[_VoitingIndex].IsTakeCommition==false, "Commission already taken!");        
+        uint myCommission = (Votings.MV[_VoitingIndex].Bank * CommissionPercent / 100);
+        Votings.MV[_VoitingIndex].IsTakeCommition = true;
+        payable(msg.sender).transfer(myCommission);
+    }
+&nbsp;
+&nbsp;
+    // Выгрузка инфы по одному голосованию
+    function GetVoteInfo(uint _VoitingIndex)
+    public
+    view    
+    onlyVotingExists(_VoitingIndex)
+    returns (
+            bool    _IsStarted,
+            uint256 _CandidateCount,
+            uint256 _StartVoting,
+            uint256 _CurrentTimeStamp,
+            uint256 _EndVoting,
+            uint256 _LengthVoting,
+            uint256 _Bank,
+            uint256 _WinnerBalance,
+            address _WinnerAddress
+        )    
+    {
+        _IsStarted = Votings.MV[_VoitingIndex].IsStarted;
+        _CandidateCount = Votings.MV[_VoitingIndex].Candidates.CandidateCount;
+        _StartVoting = Votings.MV[_VoitingIndex].StartVoting;
+        _CurrentTimeStamp = block.timestamp;
+        _EndVoting = Votings.MV[_VoitingIndex].EndVoting;
+        _LengthVoting = Votings.MV[_VoitingIndex].LengthVoting;
+        _Bank = Votings.MV[_VoitingIndex].Bank;
+        _WinnerBalance = Votings.MV[_VoitingIndex].WinnerBalance;
+        _WinnerAddress = Votings.MV[_VoitingIndex].WinnerAddress;
+    }
+    
+&nbsp;
+    // Определение событий:
+    //   таблица кадидатов
+    //   таблица черновиков
+    //   таблица стартовавших голосований
+    event EventCandidate  ( uint    indexed Vote
+                          , address indexed Candidate
+                          );
+    event EventVotingDraft( uint indexed Vote );
+    event EventVoting     ( uint indexed Vote
+                          , uint indexed StartVoting
+                          , uint indexed EndVoting
+                          , uint LengthVoting
+                          );
+&nbsp;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 29 2022 18:24:23 GMT+0300 (Москва, стандартное время)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
